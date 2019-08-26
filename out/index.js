@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const feanBot_1 = require("./bots/feanBot");
+const feanBot_1 = require("./bot/feanBot");
 const opts = {
     identity: {
         username: 'feanbot',

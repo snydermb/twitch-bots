@@ -10,7 +10,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "ts-node main/index.ts",
+    "start": "node out/index.js",
     "build": "tsc",
     "test": "test"
   },

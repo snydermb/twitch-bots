@@ -1,17 +1,15 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class CannonManager {
-    constructor() {
-        this.missedCannons = 0;
+    constructor(missedCannons = 0) {
+        this.missedCannons = missedCannons;
     }
     missedCannonTrigger() {
-        console.log("missed cannons trigger!");
         this.missedCannons++;
         return this.missedCannonsResponse();
     }
     missedCannonsResponse() {
-        console.log(`Feaniks has missed ${this.missedCannons} cannons today!`);
-        return (`Feaniks has missed ${this.missedCannons} cannons today!`);
+        return (`Feaniks has missed ${this.missedCannons} ${this.missedCannons === 1 ? 'cannon' : 'cannons'} today!`);
     }
 }
 exports.default = CannonManager;
