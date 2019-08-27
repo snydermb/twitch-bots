@@ -6,7 +6,7 @@ const opts = {
     password: 'oauth:auxphevpuepdwlk9vxo6d0hjpfc2ie'
   },
   channels: [
-    'colmby'
+    'feaniks', 'colmby'
   ]
 };
 
