@@ -7,7 +7,7 @@ const opts = {
         password: 'oauth:auxphevpuepdwlk9vxo6d0hjpfc2ie'
     },
     channels: [
-        'colmby'
+        'feaniks', 'colmby'
     ]
 };
 const feanBot = new feanBot_1.default(opts);
