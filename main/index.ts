@@ -1,4 +1,3 @@
-import { glitchInit } from './init/glitchInit';
 import FeanBot from './bot/FeanBot';
 
 const opts = {
@@ -11,6 +10,5 @@ const opts = {
   ]
 };
 
-glitchInit();
 const feanbot = new FeanBot(opts);
 feanbot.start();
