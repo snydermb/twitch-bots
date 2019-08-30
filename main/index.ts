@@ -1,14 +1,8 @@
+import twitchConfig from './config/twitchConfig';
 import FeanBot from './bot/FeanBot';
+import glitchServer from './server/glitchServer';
 
-const opts = {
-  identity: {
-    username: 'feanbot',
-    password: 'oauth:auxphevpuepdwlk9vxo6d0hjpfc2ie'
-  },
-  channels: [
-    'feaniks', 'colmby'
-  ]
-};
+glitchServer();
 
-const feanbot = new FeanBot(opts);
+const feanbot = new FeanBot(twitchConfig);
 feanbot.start();
