@@ -1,4 +1,5 @@
-import FeanBot from './bot/feanBot';
+import { glitchInit } from './init/glitchInit';
+import FeanBot from './bot/FeanBot';
 
 const opts = {
   identity: {
@@ -10,5 +11,6 @@ const opts = {
   ]
 };
 
-const feanBot = new FeanBot(opts);
-feanBot.start();
+glitchInit();
+const feanbot = new FeanBot(opts);
+feanbot.start();

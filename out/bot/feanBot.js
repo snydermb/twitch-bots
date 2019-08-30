@@ -30,4 +30,4 @@ class FeanBot {
     }
 }
 exports.default = FeanBot;
-//# sourceMappingURL=feanBot.js.map
+//# sourceMappingURL=FeanBot.js.map

@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const feanBot_1 = require("./bot/feanBot");
+const glitchInit_1 = require("./init/glitchInit");
+const FeanBot_1 = require("./bot/FeanBot");
 const opts = {
     identity: {
         username: 'feanbot',
@@ -10,6 +11,7 @@ const opts = {
         'feaniks', 'colmby'
     ]
 };
-const feanBot = new feanBot_1.default(opts);
-feanBot.start();
+glitchInit_1.glitchInit();
+const feanbot = new FeanBot_1.default(opts);
+feanbot.start();
 //# sourceMappingURL=index.js.map
