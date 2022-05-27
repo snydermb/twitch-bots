@@ -1,8 +1,8 @@
-import {twitchConfig} from './config/twitchConfig';
+import {feanbotTwitchConfig, debugTwitchConfig} from './config';
 import FeanBot from './bot/FeanBot';
-import glitchServer from './server/glitchServer';
+import {glitchServer} from './server';
 
 glitchServer();
 
-const feanbot = new FeanBot(twitchConfig);
+const feanbot = new FeanBot(feanbotTwitchConfig);
 feanbot.start();
