@@ -2,21 +2,21 @@
   "name": "twitch-bots",
   "version": "1.0.0",
   "description": "twitch.tv feaniks channel bot and others",
-  "main": "main/index.ts",
+  "main": "src/index.ts",
   "dependencies": {
     "@types/express": "^4.17.1",
     "@types/node": "^12.7.2",
     "@types/tmi.js": "^1.4.0",
     "express": "^4.17.1",
     "tmi.js": "^1.4.5",
+    "ts-node": "^10.8.0",
     "typescript": "^3.4.5"
   },
-  "devDependencies": {},
   "engines": {
     "node": "8.x"
   },
   "scripts": {
-    "start": "ts-node main/index.ts",
+    "start": "ts-node src/index.ts",
     "build": "tsc",
     "test": "test"
   },

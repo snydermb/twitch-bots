@@ -4,8 +4,8 @@
         "target": "es6",
         "noImplicitAny": false,
         "sourceMap": true,
-        "rootDir": "main",
-        "outDir": "out"
+        "rootDir": "src",
+        "outDir": "../glitch-js-twitch-bots/twitch-bots"
     },
     "exclude": [
         "node_modules"
