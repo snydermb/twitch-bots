@@ -1,25 +1,12 @@
 import * as tmi from 'tmi.js';
-import { CannonManager } from '../commands/managers';
-import { StaticResponseManager } from '../commands/managers';
+import { FeanbotCommandHandler } from '../commands/handler';
 
 export default class FeanBot {
   private client: tmi.Client;
-  private cmdMap: Map<string, Function>;
-  private cannonManager: CannonManager;
-  private staticResponseManager: StaticResponseManager;
+  private commandHandler: FeanbotCommandHandler;
 
   constructor(opts: any) {
-    this.cannonManager = new CannonManager();
-    this.staticResponseManager = new StaticResponseManager();
-
-    this.cmdMap = new Map();
-    this.cmdMap.set('!cannons', () => this.cannonManager.missedCannonsResponse());
-    this.cmdMap.set('!cannon', () => this.cannonManager.missedCannonTrigger());
-    this.cmdMap.set('!annie', () => this.staticResponseManager.annieCommandResponse());
-    this.cmdMap.set('!connect', () => this.staticResponseManager.connectCommandResponse());
-    this.cmdMap.set('!rank', () => this.staticResponseManager.rankCommandResponse());
-    this.cmdMap.set('!rules', () => this.staticResponseManager.rulesCommandResponse());
-    this.cmdMap.set('!yone', () => this.staticResponseManager.yoneCommandResponse());
+    this.commandHandler = new FeanbotCommandHandler();
 
     this.client = tmi.client(opts);
     this.client.on('message', this.onMessageHandler.bind(this));
@@ -31,11 +18,12 @@ export default class FeanBot {
   }
 
   private onMessageHandler(target, context, msg: string, self) {
-    if (!self) {
-      const command: string = msg.trim();
+    if (!self && msg.startsWith('!')) {
+      const args = msg.trim().slice(1).split(' ');
+      const command = args.shift();
 
-      if (this.cmdMap.has(command)) {
-        const response = this.cmdMap.get(command)();
+      if (this.commandHandler.hasCommand(command)) {
+        const response = this.commandHandler.executeCommand(command);
         this.client.say(target, response);
         console.log(response);
       }
