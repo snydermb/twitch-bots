@@ -17,15 +17,14 @@ export default class FeanBot {
     this.client.connect();
   }
 
-  private onMessageHandler(target, context, msg: string, self) {
+  private async onMessageHandler(target, context, msg: string, self) {
     if (!self && msg.startsWith('!')) {
       const args = msg.trim().slice(1).split(' ');
       const command = args.shift();
 
       if (this.commandHandler.hasCommand(command)) {
-        const response = this.commandHandler.executeCommand(command);
+        const response = await this.commandHandler.executeCommand(command);
         this.client.say(target, response);
-        console.log(response);
       }
     }
   }

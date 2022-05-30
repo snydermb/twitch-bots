@@ -1,6 +1,6 @@
-import { CannonManager, StaticResponseManager } from '../managers';
+import { CannonManager, StaticResponseManager, LeagueInfoManager } from '../managers';
 
-export const FeanbotCommandMap = (cannonManager: CannonManager, staticResponseManager: StaticResponseManager) => {
+export const FeanbotCommandMap = (cannonManager: CannonManager, staticResponseManager: StaticResponseManager, leagueInfoManager: LeagueInfoManager) => {
     return {
         'cannons': () => cannonManager.missedCannonsResponse(),
         'cannon': () => cannonManager.missedCannonTrigger(),
@@ -8,6 +8,7 @@ export const FeanbotCommandMap = (cannonManager: CannonManager, staticResponseMa
         'connect': () => staticResponseManager.connectCommandResponse(),
         'rank': () => staticResponseManager.rankCommandResponse(),
         'rules': () => staticResponseManager.rulesCommandResponse(),
-        'yone': () => staticResponseManager.yoneCommandResponse()
+        'yone': () => staticResponseManager.yoneCommandResponse(),
+        'summonerinfo': () => leagueInfoManager.getSummonerInfo()
     };
 }
