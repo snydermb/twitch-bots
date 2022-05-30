@@ -5,7 +5,8 @@
         "noImplicitAny": false,
         "sourceMap": true,
         "rootDir": "src",
-        "outDir": "../glitch-js-twitch-bots/twitch-bots"
+        "outDir": "../glitch-js-twitch-bots/twitch-bots",
+        "esModuleInterop": true
     },
     "exclude": [
         "node_modules"
