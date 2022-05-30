@@ -18,7 +18,6 @@ export class LeagueInfoManager {
     async getSummonerInfo() {
         const result = await this.apiClient.summoner.getSummonerByName('Kid Fean');
         const summInfo = `${result.name} is currently level ${result.summonerLevel}!`;
-        console.log(summInfo);
         return summInfo;
     }
 }
