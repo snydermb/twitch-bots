@@ -6,7 +6,7 @@ export class LeagueInfoManager {
     constructor() {
         this.apiClient = new LoLPlusClient({
             // Riot API Key
-            apiKey: 'RGAPI-46973e74-bbd9-4380-a1ff-75aca9651639',
+            apiKey: process.env.RIOT_API_KEY,
             // Game Platform, Used to choose API Endpoint
             // Full List Could be found at Riot API Documention
             gamePlatform: 'NA1', 
